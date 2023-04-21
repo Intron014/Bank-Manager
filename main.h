@@ -27,7 +27,7 @@ typedef struct accholder{
 }USER;
 
 typedef struct account{
-    char IBAN[24];
+    int IBAN[24];
     float accmoney;
     TRANS transactions[MAX_TRANS];
 }ACCOUNT;

@@ -34,11 +34,10 @@ int main(){
                 fflush(stdin);
                 database[0].user.creditaccepted=0;
                 printf("File registered, creating bank account. . .");
-                for(int i=0; i<24; i++){
+                for(int i=0; i<22; i++){
                     database[0].account.IBAN[i]= random_number(0, 9);
                 }
-                printf_s(database[0].account.IBAN);
-                people++;
+                printf_s((const char *) database[0].account.IBAN);
             default:
                 printf("Wrong option selected\n");
                 break;
