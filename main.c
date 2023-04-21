@@ -9,12 +9,13 @@ void new_acc(BANK *database, int people){
 
 int main(){
     int option=99;
-    int people=5;
+    int people=1;
     //
     BANK database[people];
     printf("Welcome to PLACEHOLDER1's bank internal systems\n");
     // main_menu(&option);
     while(option){
+        int current_select=people-1;
         printf("1. Accounts on file\n2. New account\n0. Exit");
         scanf("%i", &option);
         switch (option) {
@@ -27,17 +28,19 @@ int main(){
                 printf("Welcome to PLACEHOLDER1 bank\n");
                 printf("Please enter your name: ");
                 fflush(stdin);
-                gets(database[0].user.name);
+                gets(database[current_select].user.name);
                 fflush(stdin);
                 printf("Please enter your ID: ");
-                gets(database[0].user.id);
+                gets(database[current_select].user.id);
                 fflush(stdin);
-                database[0].user.creditaccepted=0;
-                printf("File registered, creating bank account. . .");
+                database[current_select].user.creditaccepted=0;
+                printf("File registered, creating bank account: ES");
                 for(int i=0; i<22; i++){
-                    database[0].account.IBAN[i]= random_number(0, 9);
+                    database[current_select].account.IBAN[i]= random_number(0, 9);
+                    printf("%i", database[current_select].account.IBAN[i]);
                 }
-                printf_s((const char *) database[0].account.IBAN);
+                printf("\n");
+                break;
             default:
                 printf("Wrong option selected\n");
                 break;
