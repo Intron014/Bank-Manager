@@ -27,7 +27,7 @@ typedef struct accholder{
 }USER;
 
 typedef struct account{
-    int accnumber;
+    char IBAN[24];
     float accmoney;
     TRANS transactions[MAX_TRANS];
 }ACCOUNT;
@@ -39,6 +39,11 @@ typedef struct bank{
 
 }BANK;
 
-
+int random_number(int low, int max)
+{
+    int result = 0;
+    result = (rand() % (max - low)) + low;
+    return result;
+}
 
 #endif //BANK_MAIN_H
